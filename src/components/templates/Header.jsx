@@ -10,7 +10,7 @@ function Header({ data }) {
         backgroundPosition: "top 10%",
         backgroundSize: "cover",
       }}
-      className="w-full h-[50vh] flex flex-col p-[5%] items-start justify-end"
+      className="w-full h-[50vh] flex flex-col p-[5%] items-start justify-end mb-5"
     >
       <h1 className="text-2xl font-bold text-white  w-[65%] mb-4">
         {data.title || data.original_title || data.name || data.original_name}
