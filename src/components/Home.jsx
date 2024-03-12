@@ -6,6 +6,7 @@ import Header from "./templates/Header";
 import { useState, useEffect } from "react";
 import HorizontalCards from "./templates/HorizontalCards";
 import Dropdown from "./templates/Dropdown";
+import Loader from "./Loader";
 
 function Home() {
   document.title = "Moviezz";
@@ -38,7 +39,7 @@ function Home() {
 
   useEffect(() => {
     !wallpaper && getWallpaper();
-     getTrending();
+    getTrending();
   }, [category]);
 
   return wallpaper && trending ? (
@@ -61,7 +62,7 @@ function Home() {
       </div>
     </>
   ) : (
-    <h1>loading..</h1>
+    <Loader />
   );
 }
 
