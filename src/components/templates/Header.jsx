@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 function Header({ data }) {
-  console.log(data);
   return (
     <div
       style={{
@@ -11,7 +10,7 @@ function Header({ data }) {
         backgroundPosition: "top 10%",
         backgroundSize: "cover",
       }}
-      className="w-full h-[60vh] flex flex-col p-[5%] items-start justify-end"
+      className="w-full h-[50vh] flex flex-col p-[5%] items-start justify-end"
     >
       <h1 className="text-2xl font-bold text-white  w-[65%] mb-4">
         {data.title || data.original_title || data.name || data.original_name}
@@ -23,9 +22,9 @@ function Header({ data }) {
         </Link>
       </p>
       <p className=" mt-5 text-white">
-        <i class="text-blue-600 ri-calendar-event-fill mr-3"></i>
-        {data.release_date || 'No Info'}
-        <i class="text-blue-600 ml-6 mr-3 ri-album-fill"></i>
+        <i className="text-blue-600 ri-calendar-event-fill mr-3"></i>
+        {data.release_date || "No Info"}
+        <i className="text-blue-600 ml-6 mr-3 ri-album-fill"></i>
         {data.media_type.toUpperCase()}
       </p>
       <Link className="mt-5 text-black font-medium px-4 py-2 hover:bg-[#6556cd] duration-300  bg-zinc-500 rounded-full">

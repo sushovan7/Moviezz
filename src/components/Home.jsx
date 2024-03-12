@@ -4,11 +4,13 @@ import SideNavbar from "./templates/SideNavbar";
 import TopNavbar from "./templates/TopNavbar";
 import Header from "./templates/Header";
 import { useState, useEffect } from "react";
+import HorizontalCards from "./templates/HorizontalCards";
 
 function Home() {
   document.title = "Moviezz";
 
-  const [wallpaper, setWallpaper] = useState();
+  const [wallpaper, setWallpaper] = useState(null);
+  const [trending, setTrending] = useState(null);
 
   const getWallpaper = async () => {
     try {
@@ -21,16 +23,28 @@ function Home() {
     }
   };
 
+  const getTrending = async () => {
+    try {
+      const { data } = await axios.get(`/trending/all/day`);
+      let trendingResult = data.results;
+      setTrending(trendingResult);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     !wallpaper && getWallpaper();
+    !trending && getTrending();
   }, []);
 
-  return wallpaper ? (
+  return wallpaper && trending ? (
     <>
       <SideNavbar />
-      <div className="w-[80%] h-full">
+      <div className="w-[80%] overflow-auto min-h-screen">
         <TopNavbar />
         <Header data={wallpaper} />
+        <HorizontalCards data={trending}/>
       </div>
     </>
   ) : (
