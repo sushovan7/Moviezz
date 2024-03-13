@@ -13,7 +13,7 @@ function SideNavbar() {
       <div className="w-full mt-10 pb-5  flex flex-col">
         <h1 className=" text-zinc-300 text-xl font-bold ">New Feeds</h1>
         <nav className="flex w-full flex-col justify-start items-start gap-2 mt-5">
-          <Link className="text-zinc-400 text-xl w-full duration-500 rounded-md hover:bg-[#6556cd] hover:text-[#fff] py-2 px-4">
+          <Link to='/trending' className="text-zinc-400 text-xl w-full duration-500 rounded-md hover:bg-[#6556cd] hover:text-[#fff] py-2 px-4">
             <i className="ri-fire-fill mr-2"></i> Trending
           </Link>
           <Link className="text-zinc-400 text-xl w-full duration-500  rounded-md hover:bg-[#6556cd] hover:text-[#fff] py-2 px-4">

@@ -28,7 +28,7 @@ function TopNavbar() {
         <input
           value={inputQuery}
           onChange={(e) => setInputQuery(e.target.value)}
-          className="mx-10 text-zinc-100 w-[80%]  border-none outline-none px-4 bg-transparent text-l py-2"
+          className="mx-10  text-zinc-100 w-[80%]  border-none outline-none px-4 bg-transparent text-l py-2"
           type="text"
           placeholder="Search Anything"
         />
@@ -39,7 +39,7 @@ function TopNavbar() {
           ></i>
         )}
       </div>
-      <div className="w-[50%] rounded-md px-10 max-h-[40vh] absolute top-[7%] left-[35%] bg-zinc-200 flex flex-col gap-2 overflow-auto">
+      <div className="w-[50%] absolute rounded-md px-10 max-h-[40vh]  top-[7%] left-[35%] bg-zinc-200 flex flex-col gap-2 overflow-auto">
         {searches.map((search) => (
           <Link
             key={search.id}
