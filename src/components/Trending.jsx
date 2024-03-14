@@ -1,10 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import TopNavbar from "./templates/TopNavbar";
 import Dropdown from "./templates/Dropdown";
 import { useNavigate } from "react-router-dom";
+import axios from "../utils/axios";
+
 
 function Trending() {
   const navigate = useNavigate();
+  const [category,setCategory]= useState('all')
+  const [duration,setDuration]= useState('day')
+  const [trending,setTrending]= useState([])
+
+  const getTrending = async () => {
+    try {
+      const { data } = await axios.get(`/trending/${category}/${duration}`);
+      setTrending(data.results);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  console.log(trending)
+
+  useEffect(()=>{
+    getTrending()
+  },[category,duration])
+
+
   return (
     <div className="w-screen h-screen p-6 ">
       <div className="flex w-full items-center justify-between h-[8vh] ">

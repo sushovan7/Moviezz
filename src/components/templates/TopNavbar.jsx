@@ -22,7 +22,7 @@ function TopNavbar() {
   }, [inputQuery]);
 
   return (
-    <>
+    <div className="relative">
       <div className="w-[50%] relative h-[8vh] flex items-center mx-auto  justify-center">
         <i className="ri-search-line text-2xl text-zinc-300"></i>
         <input
@@ -39,7 +39,7 @@ function TopNavbar() {
           ></i>
         )}
       </div>
-      <div className="w-[50%] absolute rounded-md px-10 max-h-[40vh]  top-[7%] left-[35%] bg-zinc-200 flex flex-col gap-2 overflow-auto">
+      <div className="w-[40%] absolute rounded-md px-10 max-h-[40vh]  top-[100%] left-[30%] bg-zinc-200 flex flex-col gap-2 overflow-auto">
         {searches.map((search) => (
           <Link
             key={search.id}
@@ -69,7 +69,7 @@ function TopNavbar() {
           </Link>
         ))}
       </div>
-    </>
+    </div>
   );
 }
 
