@@ -1,6 +1,5 @@
 import React from "react";
 
-
 function HorizontalCards({ data }) {
   return (
     <div className="w-full h-[50vh]  px-2 py-1 mt-3">
@@ -32,7 +31,6 @@ function HorizontalCards({ data }) {
                 <div className="font-regular text-white h-[4vh] flex items-center justify-center border-solid border-2 border-[#6556cd] w-[4vh] rounded-full ">
                   <p className="text-x ">{Math.floor(item.vote_average)}</p>
                 </div>
-                
               </div>
             </div>
           );
