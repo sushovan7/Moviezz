@@ -14,7 +14,7 @@ function Popular() {
   const [page, setPage] = useState(1);
   const [hasMore, sethasMore] = useState(true);
 
-  document.title = 'Moviezz | Popular '+   category.toUpperCase();
+  document.title = 'Moviezz | Popular'
 
   const getPopular = async () => {
     try {
@@ -57,10 +57,8 @@ function Popular() {
           </h1>
         </div>
         <div className="w-[65%]">
-          {" "}
           <TopNavbar />
         </div>
-
         <div className=" flex w-[25%] gap-2 ">
           <Dropdown
             title="Category"

@@ -1,12 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-function HorizontalCards({ data }) {
+function HorizontalCards({ data,title }) {
+  console.log(title)
   return (
     <div className="w-full h-[50vh]  px-2 py-1 mt-3">
       <div className="w-full h-[100%] flex  pb-2 mt-2 overflow-y-hidden">
         {data.map((item) => {
           return (
-            <div
+            <Link to={`/details/${item.id}`}
               key={item.id}
               className="w-[20%] rounded-md shrink-0 h-full m-2 shadow-[#000] shadow-sm overflow-hidden "
             >
@@ -32,7 +34,7 @@ function HorizontalCards({ data }) {
                   <p className="text-x ">{Math.floor(item.vote_average)}</p>
                 </div>
               </div>
-            </div>
+            </Link>
           );
         })}
       </div>

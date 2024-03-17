@@ -58,7 +58,7 @@ function Home() {
             options={["tv", "movie", "all"]}
           />
         </div>
-        <HorizontalCards data={trending} />
+        <HorizontalCards data={trending} title={category}/>
       </div>
     </>
   ) : (

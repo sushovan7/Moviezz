@@ -25,7 +25,7 @@ function SideNavbar() {
           <Link to='/tv' className="text-zinc-400 text-xl w-full duration-500  rounded-md hover:bg-[#6556cd] hover:text-[#fff] py-2 px-4">
             <i className="ri-tv-fill mr-2"></i> Tv shows
           </Link>
-          <Link className="text-zinc-400 text-xl w-full duration-500  rounded-md hover:bg-[#6556cd] hover:text-[#fff] py-2 px-4">
+          <Link to='/people' className="text-zinc-400 text-xl w-full duration-500  rounded-md hover:bg-[#6556cd] hover:text-[#fff] py-2 px-4">
             <i className="ri-user-3-fill mr-2"></i> People
           </Link>
         </nav>
