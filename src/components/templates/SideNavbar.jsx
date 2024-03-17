@@ -16,13 +16,13 @@ function SideNavbar() {
           <Link to='/trending' className="text-zinc-400 text-xl w-full duration-500 rounded-md hover:bg-[#6556cd] hover:text-[#fff] py-2 px-4">
             <i className="ri-fire-fill mr-2"></i> Trending
           </Link>
-          <Link className="text-zinc-400 text-xl w-full duration-500  rounded-md hover:bg-[#6556cd] hover:text-[#fff] py-2 px-4">
+          <Link to='/popular' className="text-zinc-400 text-xl w-full duration-500  rounded-md hover:bg-[#6556cd] hover:text-[#fff] py-2 px-4">
             <i className="ri-bard-fill mr-2"></i> Popular
           </Link>
-          <Link className="text-zinc-400 text-xl w-full duration-500  rounded-md hover:bg-[#6556cd] hover:text-[#fff] py-2 px-4">
+          <Link to='/movies' className="text-zinc-400 text-xl w-full duration-500  rounded-md hover:bg-[#6556cd] hover:text-[#fff] py-2 px-4">
             <i className="ri-film-fill mr-2"></i> Movies
           </Link>
-          <Link className="text-zinc-400 text-xl w-full duration-500  rounded-md hover:bg-[#6556cd] hover:text-[#fff] py-2 px-4">
+          <Link to='/tv' className="text-zinc-400 text-xl w-full duration-500  rounded-md hover:bg-[#6556cd] hover:text-[#fff] py-2 px-4">
             <i className="ri-tv-fill mr-2"></i> Tv shows
           </Link>
           <Link className="text-zinc-400 text-xl w-full duration-500  rounded-md hover:bg-[#6556cd] hover:text-[#fff] py-2 px-4">
