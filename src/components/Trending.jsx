@@ -28,7 +28,7 @@ function Trending() {
   }, [category, duration]);
 
   return trending.length > 0 ? (
-    <div className="w-screen h-screen p-6">
+    <div className="w-screen h-full p-8">
       <div className="flex w-full items-center justify-between h-[8vh] ">
         <div className="flex w-[10%] \">
           <h1 className="text-2xl font-semibold  text-zinc-400 mb-4">

@@ -4,7 +4,7 @@ import noImage from '/th.jpeg'
 
 function Cards({ data,title }) {
   return (
-    <div className="flex w-full h-full flex-wrap mt-6 bg-[#1f1e24]">
+    <div className="flex w-full h-full flex-wrap justify-between mt-6 bg-[#1f1e24]">
       {data.map((item,index) => {
         return (<Link
             key={index}

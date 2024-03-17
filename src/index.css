@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,body{
+  background-color: #1f1e24;
+}
+
 ::-webkit-scrollbar {
   width: 7px;
   height: 7px;
