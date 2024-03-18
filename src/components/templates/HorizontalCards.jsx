@@ -38,7 +38,7 @@ function HorizontalCards({ data,title }) {
                 </div>
               ) : (
                 <div className="font-regular absolute top-1 right-1 w-[5vh] h-[2.2vh] text-black bg-yellow-300  flex items-center justify-center rounded ">
-                  <p className="text-sm ">{item.first_air_date.slice(0, 4)}</p>
+                  <p className="text-sm ">{(item.first_air_date).slice(0, 4)}</p>
                 </div>
               )}
               </div>
