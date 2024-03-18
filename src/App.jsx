@@ -10,6 +10,7 @@ import MovieDetails from "./components/MovieDetails";
 import TvDetails from "./components/TvDetails";
 import PeopleDetails from "./components/PeopleDetails";
 import Trailer from "./components/Trailer";
+import VideoNotFound from "./components/VideoNotFound";
 
 function App() {
   return (
@@ -23,9 +24,12 @@ function App() {
           <Route path="/movie/details/:id/trailer" element={<Trailer />}/>
         </Route>
         <Route path="/tv" element={<TVshows />} />
-        <Route path="/tv/details/:id" element={<TvDetails />} />
+        <Route path="/tv/details/:id" element={<TvDetails />} >
+        <Route path="/tv/details/:id/trailer" element={<Trailer />}/>
+        </Route>
         <Route path="/people" element={<People />} />
         <Route path="/people/details/:id" element={<PeopleDetails />} />
+        <Route path="*" element={<VideoNotFound />} />
       </Routes>
     </div>
   );
