@@ -1,7 +1,7 @@
 import axios from "../../utils/axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import noImage from "/th.jpeg";
+import noImage from "/noImage.jpeg";
 
 function TopNavbar() {
   const [inputQuery, setInputQuery] = useState("");
@@ -39,9 +39,10 @@ function TopNavbar() {
           ></i>
         )}
       </div>
-      <div className="w-[40%] absolute rounded-md px-10 max-h-[40vh]  top-[100%] left-[30%] bg-zinc-200 flex flex-col gap-2 overflow-auto">
+      <div className="w-[40%] absolute z-10 rounded-md px-10 max-h-[40vh]  top-[100%] left-[30%] bg-zinc-200 flex flex-col gap-2 overflow-auto">
         {searches.map((search) => (
           <Link
+          to={`/${search.media_type || title}/details/${search.id}`}
             key={search.id}
             className="w-full font-semibold text-zinc-600 p-2 flex items-center justify-start gap-2 border-b-[1px] border-zinc-100 hover:bg-zinc-300 hover:text-black"
           >

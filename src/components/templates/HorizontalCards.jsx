@@ -2,15 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function HorizontalCards({ data,title }) {
-  console.log(title)
   return (
     <div className="w-full h-[50vh]  px-2 py-1 mt-3">
       <div className="w-full h-[100%] flex  pb-2 mt-2 overflow-y-hidden">
         {data.map((item) => {
           return (
-            <Link to={`/details/${item.id}`}
+            <Link to={`/${item.media_type}/details/${item.id}`}
               key={item.id}
-              className="w-[20%] rounded-md shrink-0 h-full m-2 shadow-[#000] shadow-sm overflow-hidden "
+              className="w-[20%] relative rounded-md shrink-0 h-full m-2 shadow-[#000] shadow-sm overflow-hidden "
             >
               <img
                 className="w-full h-[80%] object-cover object-center"
@@ -33,6 +32,15 @@ function HorizontalCards({ data,title }) {
                 <div className="font-regular text-white h-[4vh] flex items-center justify-center border-solid border-2 border-[#6556cd] w-[4vh] rounded-full ">
                   <p className="text-x ">{Math.floor(item.vote_average)}</p>
                 </div>
+                {item.release_date ? (
+                <div className="font-regular absolute top-1 right-1 w-[5vh] h-[2.2vh] text-black bg-yellow-300  flex items-center justify-center rounded ">
+                  <p className="text-sm ">{item.release_date.slice(0, 4)}</p>
+                </div>
+              ) : (
+                <div className="font-regular absolute top-1 right-1 w-[5vh] h-[2.2vh] text-black bg-yellow-300  flex items-center justify-center rounded ">
+                  <p className="text-sm ">{item.first_air_date.slice(0, 4)}</p>
+                </div>
+              )}
               </div>
             </Link>
           );
