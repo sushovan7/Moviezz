@@ -5,12 +5,11 @@ import noImage from "/noImage.jpeg";
 
 function TopNavbar() {
   const [inputQuery, setInputQuery] = useState("");
-
   const [searches, setSearches] = useState([]);
-
   const getSearches = async () => {
     try {
       const { data } = await axios.get(`/search/multi?query=${inputQuery}`);
+      console.log(data.results)
       setSearches(data.results);
     } catch (error) {
       console.log(error);
@@ -42,7 +41,7 @@ function TopNavbar() {
       <div className="w-[40%] absolute z-10 rounded-md px-10 max-h-[40vh]  top-[100%] left-[30%] bg-zinc-200 flex flex-col gap-2 overflow-auto">
         {searches.map((search) => (
           <Link
-          to={`/${search.media_type || title}/details/${search.id}`}
+          to={`/${search.media_type || 'person'}/details/${search.id}`}
             key={search.id}
             className="w-full font-semibold text-zinc-600 p-2 flex items-center justify-start gap-2 border-b-[1px] border-zinc-100 hover:bg-zinc-300 hover:text-black"
           >

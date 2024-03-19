@@ -11,7 +11,6 @@ function PeopleDetails() {
   const { id } = useParams();
   const dispatch = useDispatch();
   const { movieInfo } = useSelector((state) => state.people);
-  console.log(movieInfo);
   useEffect(() => {
     dispatch(asyncLoadPeople(id));
     return () => {

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Outlet, useParams } from "react-router-dom";
 import { asyncLoadMovie, removeMovie } from "../store/actions/MovieActions";
@@ -7,8 +7,8 @@ import { Link } from "react-router-dom";
 import noImage from "/noImage.jpeg";
 import { useNavigate } from "react-router-dom";
 
-
 function MovieDetails() {
+ 
   const navigate = useNavigate();
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -19,7 +19,7 @@ function MovieDetails() {
       dispatch(removeMovie());
     };
   }, []);
-
+  
   return movieInfo ? (
     <div
       style={{
@@ -31,7 +31,7 @@ function MovieDetails() {
       }}
       className="w-screen h-screen relative px-20"
     >
-       <Outlet />
+      <Outlet />
       <i
         onClick={() => navigate(-1)}
         className="ri-arrow-left-line text-5xl absolute top-[5%] left-[4%] cursor-pointer text-zinc-100"
@@ -65,17 +65,23 @@ function MovieDetails() {
         <div className="overwiew w-[70%] text-zinc-400">
           <p>{movieInfo.details.overview.slice(0, 500)}</p>
         </div>
-        <Link to={`/movie/details/${movieInfo.details.id}/trailer`} className=" text-white w-[20%] font-medium px-4 py-4 bg-[#6556cd] duration-300  hover:bg-[#3522af] rounded text-center">
+        <Link
+          to={`/movie/details/${movieInfo.details.id}/trailer`}
+          className=" text-white w-[20%] font-medium px-4 py-4 bg-[#6556cd] duration-300  hover:bg-[#3522af] rounded text-center"
+        >
           Watch Trailer
         </Link>
       </div>
       <h3 className="right text-white absolute top-[63%] text-2xl font-bold right-[30%] flex items-center">
         Cast
       </h3>
-      <div className="right text-white absolute top-[70%] right-[5%] flex items-center gap-3 w-[30%] overflow-x-auto overflow-y-hidden">
+      <div
+        className="right text-white absolute top-[70%] right-[5%] flex items-center gap-3 w-[30%] overflow-x-auto overflow-y-hidden"
+      >
         {movieInfo.credits.map((cast, index) => {
           return (
-            <div
+            <Link
+            to={`/person/details/${cast.id}`}
               key={index}
               className="w-[10vw] h-[10vw] shrink-0  flex flex-col items-center justify-center gap-3 p-2"
             >
@@ -91,7 +97,7 @@ function MovieDetails() {
               <h1 className="text-sm w-[100%] h-[100%] font-light text-zinx-500 text-center">
                 {cast.name || cast.original_name}
               </h1>
-            </div>
+            </Link>
           );
         })}
       </div>
