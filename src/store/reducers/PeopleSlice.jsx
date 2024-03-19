@@ -1,23 +1,23 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  peopleInfo: null,
+  movieInfo: null,
 };
 
 export const PeopleSlice = createSlice({
-  name: "People",
+  name: "people",
   initialState,
   reducers: {
     loadPeople: (state, action) => {
-      state.peopleInfo = action.payload;
+      state.movieInfo = action.payload;
     },
     removePeople: (state, action) => {
-      state.peopleInfo = null;
+      state.movieInfo = null;
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { loadpeople, removepeople } = PeopleSlice.actions;
+export const { loadPeople, removePeople } = PeopleSlice.actions;
 
 export default PeopleSlice.reducer;
