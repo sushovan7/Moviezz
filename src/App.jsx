@@ -10,7 +10,7 @@ import MovieDetails from "./components/MovieDetails";
 import TvDetails from "./components/TvDetails";
 import PeopleDetails from "./components/PeopleDetails";
 import Trailer from "./components/Trailer";
-import VideoNotFound from "./components/VideoNotFound";
+import Error from "./components/Error";
 
 function App() {
   return (
@@ -29,7 +29,7 @@ function App() {
         </Route>
         <Route path="/people" element={<People />} />
         <Route path="/people/details/:id" element={<PeopleDetails />} />
-        <Route path="*" element={<VideoNotFound />} />
+        <Route path="*" element={<Error />} />
       </Routes>
     </div>
   );

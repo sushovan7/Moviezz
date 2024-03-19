@@ -29,7 +29,7 @@ function PeopleDetails() {
           <div className="w-full h-full">
             <img
               className="w-full h-full object-cover"
-              src={`https://image.tmdb.org/t/p/original/${movieInfo.details.profile_path})`}
+              src={movieInfo.details.profile_path ? `https://image.tmdb.org/t/p/original/${movieInfo.details.profile_path})` : noImage}
               alt=""
             />
           </div>

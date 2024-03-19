@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 function TvDetails() {
   const navigate = useNavigate();
-  const { id,media_type } = useParams();
+  const { id } = useParams();
   const dispatch = useDispatch();
   const { movieInfo } = useSelector((state) => state.tv);
   useEffect(() => {
@@ -74,7 +74,7 @@ function TvDetails() {
       <h3 className="right text-white absolute top-[63%] text-2xl font-bold right-[30%] flex items-center">
         Cast
       </h3>
-      <div className="right text-white absolute top-[70%] right-[5%] flex items-center gap-3 w-[30%] overflow-x-auto overflow-y-hidden">
+      <div  className="right text-white absolute top-[70%] right-[5%] flex items-center gap-3 w-[30%] overflow-x-auto overflow-y-hidden">
         {movieInfo.credits.cast.map((cast, index) => {
           return (
             <div
