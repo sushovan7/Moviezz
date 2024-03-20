@@ -77,7 +77,8 @@ function TvDetails() {
       <div  className="right text-white absolute top-[70%] right-[5%] flex items-center gap-3 w-[30%] overflow-x-auto overflow-y-hidden">
         {movieInfo.credits.cast.map((cast, index) => {
           return (
-            <div
+            <Link
+            to={`/${cast.media_type || 'person'}/details/${cast.id}`}
               key={index}
               className="w-[10vw] h-[10vw] shrink-0  flex flex-col items-center justify-center gap-3 p-2"
             >
@@ -93,7 +94,7 @@ function TvDetails() {
               <h1 className="text-sm w-[100%] h-[100%] font-light text-zinx-500 text-center">
                 {cast.name || cast.original_name}
               </h1>
-            </div>
+            </Link>
           );
         })}
       </div>
