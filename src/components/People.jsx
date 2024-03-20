@@ -50,7 +50,7 @@ function People() {
           <h1 className="text-2xl font-semibold  text-zinc-400 mb-4">
             <i
               onClick={() => navigate(-1)}
-              className="ri-arrow-left-line text-2xl text-[#6556CD]"
+              className="ri-arrow-left-line text-2xl cursor-pointer text-[#6556CD]"
             ></i>
             People  <small className="text-sm ml-2 text-zinc-600">popular</small>
           </h1>

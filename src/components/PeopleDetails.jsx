@@ -19,7 +19,7 @@ function PeopleDetails() {
     };
   }, []);
   return movieInfo ? (
-    <div className="w-screen h-screen relative px-20 bg-[#6556cd]">
+    <div className="w-screen h-screen relative px-20 ">
       <i
         onClick={() => navigate(-1)}
         className="ri-arrow-left-line text-5xl absolute top-[5%] left-[4%] cursor-pointer text-zinc-100"
